@@ -1,9 +1,9 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react'
 
-import Home from "./components/Home"
+import Home from "./components /Home"
 import Nav from './components /Nav';
 import About from './components /About';
-import Video from "./components/Video"
+import Video from "./components /Video"
 
 import './App.css';
 
