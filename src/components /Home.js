@@ -4,7 +4,7 @@ import Nav from "./Nav"
 function Home() {
     return (
         <div className='homepage'>
-          <Nav />  
+          <p>My App</p> 
         </div>
     );
 }

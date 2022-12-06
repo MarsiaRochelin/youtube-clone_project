@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
-    <div>
-      <nav>
+    <div className="nav">
+      <nav className="navbar">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
       </nav>
