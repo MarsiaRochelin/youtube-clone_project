@@ -1,5 +1,6 @@
 import React from 'react';
 import Searchbar from './Searchbar';
+import ErrorMessage from './ErrorMessage';
 
 function Home() {
     return (
