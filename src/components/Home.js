@@ -11,8 +11,10 @@ function Home() {
   function handleTextChange(e) {
     setSearch(e.target.value);
   }
+
   function handleOnClick(e) {
     e.preventDefault();
+
     if (search === "") {
       return setUserSearch([]);
     } else {
