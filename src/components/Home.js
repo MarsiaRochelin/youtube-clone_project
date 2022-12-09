@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Youtube from "react-youtube";
-import Searchbar from "./Searchbar";
+import Videos from "./Videos";
 
 function Home() {
   const [search, setSearch] = useState("");
@@ -56,15 +56,13 @@ function Home() {
           No search Result Yet! Please submit a search Above!
         </p>
       ) : (
-        <Searchbar
+        <Videos
           search={search}
           setSearch={setSearch}
           userSearch={userSearch}
           setUserSearch={setUserSearch}
         />
       )}
-      {/* <Searchbar />
-         <p className='prompt'>No search Result Yet! Please submit a search Above!</p> */}
     </div>
   );
 }
