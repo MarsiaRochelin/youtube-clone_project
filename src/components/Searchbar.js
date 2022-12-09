@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Searchbar({ search, setSearch, userSearch, setUserSearch }) {
+function Searchbar({ search, userSearch, setUserSearch }) {
   useEffect(() => {
     fetch(
       `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${search}&key=AIzaSyD0ZPMTO8s-e9U2GV1OjGOz9OtJOHqi3io`
