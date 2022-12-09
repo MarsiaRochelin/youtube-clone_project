@@ -1,71 +1,39 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import ErrorMessage from "./ErrorMessage";
+import { Link } from "react-router-dom";
 
-function Searchbar() {
-  const [inputValue, setInputValue] = useState("");
-  const [loadingError, setLoadingError] = useState(false);
-  const [userSearch, setUserSearch] = useState([]);
-
-  const URL = process.env.REACT_APP_API_BASE_URL;
-  const search = process.env.REACT_APP_API_SEARCH;
-  const key = process.env.REACT_APP_API_KEY;
-
-  function handleTextChange(e) {
-    setInputValue(e.target.value);
-  }
-
-  function handleOnClick(e) {
-    e.preventDefault();
-    if(inputValue.length === 0){
-        setUserSearch([])
-    } else {
-        fetch(`${URL}${search}${inputValue}${key}`)
-        .then(res => res.json())
-        .then(res => {
-            setUserSearch(res.items)
-            console.log(userSearch)
-            setLoadingError(false)
-        })
-        .catch(err => {console.log(err)
-        setLoadingError(true)
-    })
-    }
-  }
-
-  function handleInputReset() {
-    setInputValue("");
-  }
-
+function Searchbar({ search, setSearch, userSearch, setUserSearch }) {
   useEffect(() => {
-    fetch(`${URL}${search}${inputValue}${key}`)
-      .then(res => res.json())
-      .then(res => {
-          setUserSearch(res.items);
-          console.log(res.items)
-        setLoadingError(false);
+    fetch(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${search}&key=AIzaSyD0ZPMTO8s-e9U2GV1OjGOz9OtJOHqi3io`
+    )
+      .then((res) => res.json())
+      .then((res) => {
+        setUserSearch(res.items);
+        console.log(res.items);
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
-        setLoadingError(true);
       });
   }, []);
 
   return (
     <div className="searchbar">
-      <label>
-        <input
-          type="text"
-          id="search"
-          placeholder="Search..."
-          name="search"
-          value={inputValue}
-          onChange={handleTextChange}
-        ></input>
-        <button onClick={handleOnClick}>Search</button>
-      </label>
-      <section className="videos">
-        {/* A ternary should go here saying if loading error is set to true return ErrorMessage component else return videos component to list out all the videos */}
+      <section className="videos-list">
+        {userSearch?.map((video) => {
+          return (
+            <div key={video.id.videoId} className="video">
+              <Link to={`/video/${video.id.videoId}`}>
+                <img
+                  src={video.snippet.thumbnails.medium.url}
+                  alt={userSearch}
+                ></img>
+                <p className="title">{video.snippet.title}</p>
+              </Link>
+              <p className="channel">{video.snippet.channelTitle}</p>
+            </div>
+          );
+        })}
       </section>
     </div>
   );

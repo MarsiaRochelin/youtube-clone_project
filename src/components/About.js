@@ -13,8 +13,8 @@ function About() {
       <img src="./Mars.jpg" alt="Mars"></img>
       <p>
         [Mars]ia [Roc]helin is a [Full Stack Web Developer] who desires to align
-        herself with opportunities/enviroments that grants her autonomy to tap
-        into her creativity when maintaining software infrastructures and
+        herself with enviroments that grants her autonomy to tap
+        into her creativity when gaining experience maintaining software infrastructures and
         assuring their quality.
       </p>
       <a href="https://github.com/MarsiaRochelin">My Github</a>

@@ -1,40 +1,29 @@
 .App {
   text-align: center;
 }
+
 /* want to make background color black (and my text white) however evertime I tried assigining the className app and homepage that background color it only took up a small portion of my app viewheight WHY? */
 
 .nav {
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: red;
-  height:40px;
-  width:auto;
-  
+  height: 40px;
+  width: auto;
 }
 
 .searchbar {
-  margin: 20px;
+  margin-top: 20px;
 }
 
 .prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: gray;
-  height:40px;
-  width:auto;
+  height: 40px;
+  width: auto;
   margin-left: 50px;
   margin-right: 50px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

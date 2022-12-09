@@ -1,9 +1,12 @@
 import React from 'react';
+import Video from "./Video"
 
-function Videos() {
+function Videos({userSearch}) {
     return (
-        <div>
-            
+        <div className='videos'>
+            <ul>
+            <li></li>
+            </ul>
         </div>
     );
 }
