@@ -5,7 +5,7 @@ function Nav() {
   return (
     <div className="nav">
       <nav className="navbar">
-        Youtube
+        <strong>Youtube</strong>
         <Link to="/">Home</Link> <Link to="/about">About</Link>
       </nav>
     </div>
